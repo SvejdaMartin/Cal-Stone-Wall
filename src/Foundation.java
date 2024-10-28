@@ -29,4 +29,8 @@ public class Foundation {
     public double calculateRebarCost(){
         return calculateRebarCount() * rebarPrice;
     }
+    // Calculation of the price of all materials used for foundation
+    public double calculateTotalFoundationPrice(){
+        return calculateConcreteCost() + calculateRebarCost();
+    }
 }
