@@ -31,7 +31,6 @@ public class Main {
         System.out.printf("Total rebar cost: %.2f\n", rebarCost);
         System.out.println();
         System.out.printf("Total cost for the foundation is %.2f You will need to order %.2f m3 of concrete and %d m of steel bars.\n", totalCost, foundation.calculateConcreteVolume(), foundation.calculateRebarCount());
-        System.out.println("Of course you need to add the price of the transport and digger works. ");
         System.out.println();
         System.out.println("Stone Wall Calculator");
         System.out.print("Enter wall width (m): ");
@@ -40,14 +39,14 @@ public class Main {
         double wallLength = scanner.nextDouble();
         System.out.print("Enter wall height (m): ");
         double wallHeight = scanner.nextDouble();
-        System.out.print("Will the wall use only stones or a combination of stones and lost shuttering (true for combination, false for only stones)? ");
+        System.out.print("Will you use only stones or a combination of stones and concrete shuttering blocks (true for combination, false for only stones)? ");
         boolean useLostShuttering = scanner.nextBoolean();
 
         double stonePrice = 0, shutteringPrice = 0;
         if(useLostShuttering){
             System.out.print("Enter price per ton of stone: ");
             stonePrice = scanner.nextDouble();
-            System.out.print("Enter price per piece of lost shuttering: ");
+            System.out.print("Enter price per piece of formwork block (dimension of one block: l = 0.5m, h = 0.25m, w = 0.1m): ");
             shutteringPrice = scanner.nextDouble();
         } else {
             System.out.print("Enter price per ton of stone: ");
@@ -58,7 +57,5 @@ public class Main {
         double totalWallCost = wall.calculateTotalCost();
         System.out.printf("Total wall cost: %.2f\n", totalWallCost);
         scanner.close();
-
-
     }
 }
