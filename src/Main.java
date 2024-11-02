@@ -39,23 +39,24 @@ public class Main {
         double wallLength = scanner.nextDouble();
         System.out.print("Enter wall height (m): ");
         double wallHeight = scanner.nextDouble();
-        System.out.print("Will you use only stones or a combination of stones and concrete shuttering blocks (true for combination, false for only stones)? ");
-        boolean useLostShuttering = scanner.nextBoolean();
+        System.out.print("Will you use only stones or a combination of stones and formwork blocks (true for combination, false for only stones)? ");
+        boolean useFormWorkBlocks = scanner.nextBoolean();
 
-        double stonePrice = 0, shutteringPrice = 0;
-        if(useLostShuttering){
+        double stonePrice = 0, BlockPrice = 0;
+        if(useFormWorkBlocks){
             System.out.print("Enter price per ton of stone: ");
             stonePrice = scanner.nextDouble();
             System.out.print("Enter price per piece of formwork block (dimension of one block: l = 0.5m, h = 0.25m, w = 0.1m): ");
-            shutteringPrice = scanner.nextDouble();
+            BlockPrice = scanner.nextDouble();
         } else {
             System.out.print("Enter price per ton of stone: ");
             stonePrice = scanner.nextDouble();
         }
-        Wall wall = new Wall(wallWidth, wallLength, wallHeight, useLostShuttering, stonePrice, shutteringPrice);
+        Wall wall = new Wall(wallWidth, wallLength, wallHeight, useFormWorkBlocks, stonePrice);
 
         double totalWallCost = wall.calculateTotalCost();
-        System.out.printf("Total wall cost: %.2f\n", totalWallCost);
+        System.out.printf("Total wall cost is %.2f you will need to order %.2f tons of stones.\n", totalWallCost, wall.calculateStoneVolume()*2.6);
+        System.out.println("cena kamene v kombi :" + wall.calculateCombStoneCost() + "cena kamene za normal :" + wall.calculateStoneCost());
         scanner.close();
     }
 }
