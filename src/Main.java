@@ -42,12 +42,12 @@ public class Main {
         System.out.print("Will you use only stones or a combination of stones and formwork blocks (true for combination, false for only stones)? ");
         boolean useFormWorkBlocks = scanner.nextBoolean();
 
-        double stonePrice = 0, BlockPrice = 0;
+        double stonePrice = 0, blockPrice = 0;
         if(useFormWorkBlocks){
             System.out.print("Enter price per ton of stone: ");
             stonePrice = scanner.nextDouble();
             System.out.print("Enter price per piece of formwork block (dimension of one block: l = 0.5m, h = 0.25m, w = 0.1m): ");
-            BlockPrice = scanner.nextDouble();
+            blockPrice = scanner.nextDouble();
         } else {
             System.out.print("Enter price per ton of stone: ");
             stonePrice = scanner.nextDouble();
