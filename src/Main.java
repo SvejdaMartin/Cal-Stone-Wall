@@ -42,21 +42,19 @@ public class Main {
         System.out.print("Will you use only stones or a combination of stones and formwork blocks (true for combination, false for only stones)? ");
         boolean useFormWorkBlocks = scanner.nextBoolean();
 
-        double stonePrice = 0, blockPrice = 0;
-        if(useFormWorkBlocks){
-            System.out.print("Enter price per ton of stone: ");
-            stonePrice = scanner.nextDouble();
-            System.out.print("Enter price per piece of formwork block (dimension of one block: l = 0.5m, h = 0.25m, w = 0.1m): ");
-            blockPrice = scanner.nextDouble();
-        } else {
-            System.out.print("Enter price per ton of stone: ");
-            stonePrice = scanner.nextDouble();
-        }
+        System.out.print("Enter price per ton of stone: ");
+        double stonePrice = scanner.nextDouble();
         Wall wall = new Wall(wallWidth, wallLength, wallHeight, useFormWorkBlocks, stonePrice);
 
-        double totalWallCost = wall.calculateTotalCost();
-        System.out.printf("Total wall cost is %.2f you will need to order %.2f tons of stones.\n", totalWallCost, wall.calculateStoneVolume()*2.6);
-        System.out.println("cena kamene v kombi :" + wall.calculateCombStoneCost() + "cena kamene za normal :" + wall.calculateStoneCost());
-        scanner.close();
+        if(useFormWorkBlocks){
+            System.out.print("Enter price per piece of formwork block (dimension of one block: l = 0.5m, h = 0.25m, w = 0.1m): ");
+            double blockPrice = scanner.nextDouble();
+            FormWorkBlocks blocks = new FormWorkBlocks(wallLength,wallHeight,blockPrice);
+            double totalWallCost = wall.calculateCombStoneCost() + blocks.calculateFormBlockCost();
+            System.out.printf("Total wall cost is %.2f\n", totalWallCost);
+            System.out.printf("You need to order : %.2f tons of stones at a price of %.2f and %d pieces of formwork blocks at a price of %.2f\n", wall.calculateCombVolume()*2.6, wall.calculateCombStoneCost(), blocks.calculateFormBlockCount(), blocks.calculateFormBlockCost());
+        } else {
+            System.out.printf("Total wall cost is %.2f you will need to order %.2f tons of stones.\n", wall.calculateStoneCost(), wall.calculateStoneVolume()*2.6);
+        }
     }
 }

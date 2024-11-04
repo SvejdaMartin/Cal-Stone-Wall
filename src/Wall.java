@@ -31,12 +31,4 @@ public class Wall {
     public double calculateCombStoneCost(){
         return calculateCombVolume() * 2.6 * stonePricePerTon;
     }
-    // Final calculation cost for both walls
-    public double calculateTotalCost() {
-        double totalCost = calculateStoneCost();
-        if (useFormWorkBlocks) {
-            totalCost += calculateStoneCost();
-        }
-        return totalCost;
-    }
 }
