@@ -25,7 +25,7 @@ Wall dimensions: Width, length, and height.
 Construction method: Choice between stone only or stone with formwork blocks.
 
 ## Example Output
-
+![Example Output](images/exampleOutput.png)
 
 ## Future Improvements
 - Add option to calculate wall construction time, labor or excavation cost.
