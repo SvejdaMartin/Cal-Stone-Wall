@@ -8,8 +8,9 @@ public class Main {
          * Conzole app for a rough calculation ot the prices and consumption of material for the construction of a stone wall
          */
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Foundation Calculator");
-
+        System.out.println();
+        System.out.println("-------------- Foundation Calculator --------------");
+        System.out.println();
         System.out.print("Enter foundation width (m): ");
         double foundationWidth = scanner.nextDouble();
         System.out.print("Enter foundation length (m): ");
@@ -32,14 +33,15 @@ public class Main {
         System.out.println();
         System.out.printf("Total cost for the foundation is %.2f You will need to order %.2f m3 of concrete and %d m of steel bars.\n", totalCost, foundation.calculateConcreteVolume(), foundation.calculateRebarCount());
         System.out.println();
-        System.out.println("Stone Wall Calculator");
+        System.out.println("-------------- Stone Wall Calculator --------------");
+        System.out.println();
         System.out.print("Enter wall width (m): ");
         double wallWidth = scanner.nextDouble();
         System.out.print("Enter wall length (m): ");
         double wallLength = scanner.nextDouble();
         System.out.print("Enter wall height (m): ");
         double wallHeight = scanner.nextDouble();
-        System.out.print("Will you use only stones or a combination of stones and formwork blocks (true for combination, false for only stones)? ");
+        System.out.print("Select construction method (true = Stone with formwork block, false = Stone only): ");
         boolean useFormWorkBlocks = scanner.nextBoolean();
 
         System.out.print("Enter price per ton of stone: ");
@@ -56,5 +58,6 @@ public class Main {
         } else {
             System.out.printf("Total wall cost is %.2f you will need to order %.2f tons of stones.\n", wall.calculateStoneCost(), wall.calculateStoneVolume()*2.6);
         }
+        scanner.close();
     }
 }

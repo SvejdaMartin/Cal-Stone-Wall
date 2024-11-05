@@ -12,11 +12,11 @@ public class FormWorkBlocks {
         this.height = height;
         this.blockPricePerPiece = blockPricePerPiece;
     }
-    // Calculation of Formwork Blocks with dimensions l = 0.5m, h = 0.25m, w = 0.1m. 8 pieces is needed for 1 m2
+    // Calculation of Formwork Blocks with dimensions l = 0.5m, h = 0.25m, w = 0.1m. 8 pieces are needed for 1 m2
     public int calculateFormBlockCount(){
         return (int) Math.ceil(height) * (int) Math.ceil(length) * 8;
     }
-    // Calculation of Formwork Block cost
+    // Calculation of Formwork Blocks cost
     public double calculateFormBlockCost(){
         return calculateFormBlockCount() * blockPricePerPiece;
     }

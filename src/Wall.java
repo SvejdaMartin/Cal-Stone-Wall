@@ -1,7 +1,6 @@
 public class Wall {
     /**
      * The class represents a stone wall. Methods are used for calculation whole price.
-     *
      */
     private double width, length, height;
     private boolean useFormWorkBlocks;
