@@ -11,8 +11,7 @@ public class Main {
         System.out.println();
         System.out.println("-------------- Foundation Calculator --------------");
         System.out.println();
-        System.out.print("Enter foundation width (m): ");
-        double foundationWidth = scanner.nextDouble();
+        double foundationWidth = InputValidator.getPositiveDouble(scanner, "Enter foundation width (m): ");
         System.out.print("Enter foundation length (m): ");
         double foundationLength = scanner.nextDouble();
         System.out.print("Enter foundation depth (m): ");
