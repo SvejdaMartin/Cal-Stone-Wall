@@ -12,14 +12,10 @@ public class Main {
         System.out.println("-------------- Foundation Calculator --------------");
         System.out.println();
         double foundationWidth = InputValidator.getPositiveDouble(scanner, "Enter foundation width (m): ");
-        System.out.print("Enter foundation length (m): ");
-        double foundationLength = scanner.nextDouble();
-        System.out.print("Enter foundation depth (m): ");
-        double foundationDepth = scanner.nextDouble();
-        System.out.print("Enter the price per cubic meter of the concrete: ");
-        double concretePrice = scanner.nextDouble();
-        System.out.print("Enter the price per meter of the steel bar: ");
-        double rebarPrice = scanner.nextDouble();
+        double foundationLength = InputValidator.getPositiveDouble(scanner, "Enter foundation length (m): ");
+        double foundationDepth = InputValidator.getPositiveDouble(scanner, "Enter foundation depth (m): "  );
+        double concretePrice = InputValidator.getPositiveDouble(scanner, "Enter the price per cubic meter of the concrete: " );
+        double rebarPrice = InputValidator.getPositiveDouble(scanner, "Enter the price per meter of the steel bar: ");
 
         Foundation foundation = new Foundation(foundationWidth, foundationLength, foundationDepth, concretePrice, rebarPrice);
 
@@ -34,22 +30,17 @@ public class Main {
         System.out.println();
         System.out.println("-------------- Stone Wall Calculator --------------");
         System.out.println();
-        System.out.print("Enter wall width (m): ");
-        double wallWidth = scanner.nextDouble();
-        System.out.print("Enter wall length (m): ");
-        double wallLength = scanner.nextDouble();
-        System.out.print("Enter wall height (m): ");
-        double wallHeight = scanner.nextDouble();
+        double wallWidth = InputValidator.getPositiveDouble(scanner, "Enter wall width (m): " );
+        double wallLength = InputValidator.getPositiveDouble(scanner, "Enter wall length (m): ");
+        double wallHeight = InputValidator.getPositiveDouble(scanner, "Enter wall height (m): ");
         System.out.print("Select construction method (true = Stone with formwork block, false = Stone only): ");
         boolean useFormWorkBlocks = scanner.nextBoolean();
 
-        System.out.print("Enter price per ton of stone: ");
-        double stonePrice = scanner.nextDouble();
+        double stonePrice = InputValidator.getPositiveDouble(scanner, "Enter price per ton of stone: " );
         Wall wall = new Wall(wallWidth, wallLength, wallHeight, useFormWorkBlocks, stonePrice);
 
         if(useFormWorkBlocks){
-            System.out.print("Enter price per piece of formwork block (dimension of one block: l = 0.5m, h = 0.25m, w = 0.1m): ");
-            double blockPrice = scanner.nextDouble();
+            double blockPrice = InputValidator.getPositiveDouble(scanner, "Enter price per piece of formwork block (dimension of one block: l = 0.5m, h = 0.25m, w = 0.1m): " );
             FormWorkBlocks blocks = new FormWorkBlocks(wallLength,wallHeight,blockPrice);
             double totalWallCost = wall.calculateCombStoneCost() + blocks.calculateFormBlockCost();
             System.out.printf("Total wall cost is %.2f\n", totalWallCost);

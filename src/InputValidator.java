@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class InputValidator {
     /**
-     * The class that contains user input validation methods.
+     * The class contains user input validation methods.
      */
-    // Validation of a positive number for double type
+    // Validation of a positive number for a double type
     public static double getPositiveDouble(Scanner scanner, String prompt) {
         double value;
         while (true) {
