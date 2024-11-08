@@ -33,8 +33,7 @@ public class Main {
         double wallWidth = InputValidator.getPositiveDouble(scanner, "Enter wall width (m): " );
         double wallLength = InputValidator.getPositiveDouble(scanner, "Enter wall length (m): ");
         double wallHeight = InputValidator.getPositiveDouble(scanner, "Enter wall height (m): ");
-        System.out.print("Select construction method (true = Stone with formwork block, false = Stone only): ");
-        boolean useFormWorkBlocks = scanner.nextBoolean();
+        boolean useFormWorkBlocks = InputValidator.getBoolean(scanner, "Select construction method (true = Stone with formwork block, false = Stone only): " );
 
         double stonePrice = InputValidator.getPositiveDouble(scanner, "Enter price per ton of stone: " );
         Wall wall = new Wall(wallWidth, wallLength, wallHeight, useFormWorkBlocks, stonePrice);

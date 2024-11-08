@@ -24,4 +24,18 @@ public class InputValidator {
         return value;
     }
     // You can add more validation for other types (boolean, int...)
+    public static boolean getBoolean(Scanner scanner, String prompt){
+        boolean rightBoolean;
+        while (true) {
+            System.out.print(prompt);
+            if (scanner.hasNextBoolean()){
+                rightBoolean = scanner.nextBoolean();
+                break; // end while cycle when read valid value
+            } else {
+                System.out.println("Invalid input. Please enter 'true' or 'false'.");
+                scanner.next(); // skip non valid input
+            }
+        }
+        return rightBoolean;
+    }
 }
