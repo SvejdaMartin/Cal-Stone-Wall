@@ -30,4 +30,8 @@ public class Wall {
     public double calculateCombStoneCost(){
         return calculateCombVolume() * 2.6 * stonePricePerTon;
     }
+    // Getter for useFormWorkBlocks in Project class
+    public boolean isUseFormWorkBlocks() {
+        return useFormWorkBlocks;
+    }
 }

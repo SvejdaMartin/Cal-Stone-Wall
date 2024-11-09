@@ -8,6 +8,25 @@ public class Main {
          * Conzole app for a rough calculation ot the prices and consumption of material for the construction of a stone wall
          */
         Scanner scanner = new Scanner(System.in);
+
+        // Create a project and calculate cost
+        Project project = new Project(scanner);
+        project.calculateTotalProjectCost();
+
+        scanner.close();
+
+
+
+
+
+
+
+
+
+
+
+        /**
+        Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("-------------- Foundation Calculator --------------");
         System.out.println();
@@ -47,6 +66,6 @@ public class Main {
         } else {
             System.out.printf("Total wall cost is %.2f you will need to order %.2f tons of stones.\n", wall.calculateStoneCost(), wall.calculateStoneVolume()*2.6);
         }
-        scanner.close();
+        scanner.close();*/
     }
 }

@@ -23,7 +23,7 @@ public class InputValidator {
         }
         return value;
     }
-    // You can add more validation for other types (boolean, int...)
+    // Validation of boolean input
     public static boolean getBoolean(Scanner scanner, String prompt){
         boolean rightBoolean;
         while (true) {
