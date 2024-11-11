@@ -1,6 +1,6 @@
 public class FormWorkBlocks {
     /**
-     * The class represents form work blocks Which are sometimes used for building a stone wall.
+     * The class represents formwork blocks which are sometimes used for building a stone wall.
      * Those blocks are inside the stone wall, building is easier and faster with them, you will not need to manipulate with big stones.
      * Methods are used for calculation whole price and amount which you need to order.
      */

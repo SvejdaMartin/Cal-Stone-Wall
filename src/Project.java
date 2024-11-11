@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Project {
     /**
-     * The central class for calculations and inputs.
+     * Controller class for calculations and inputs.
      */
     private Foundation foundation;
     private Wall wall;
@@ -54,7 +54,6 @@ public class Project {
             System.out.printf("Wall (Stone only) - Total cost: %.2f\n", wallCost);
             System.out.printf("Materials needed: %.2f tons of stone\n", wall.calculateStoneVolume() * 2.6);
         }
-
         // Total cost of the project
         double totalProjectCost = foundationTotalCost + wallCost;
         System.out.printf("\nTotal project cost: %.2f\n", totalProjectCost);
