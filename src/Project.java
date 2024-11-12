@@ -4,8 +4,8 @@ public class Project {
     /**
      * Controller class for calculations and inputs.
      */
-    private Foundation foundation;
-    private Wall wall;
+    private final Foundation foundation;
+    private final Wall wall;
     private FormWorkBlocks blocks;
 
     public Project(Scanner scanner) {
@@ -48,11 +48,11 @@ public class Project {
         if (wall.isUseFormWorkBlocks()) {
             wallCost = wall.calculateCombStoneCost() + blocks.calculateFormBlockCost();
             System.out.printf("Wall (Stone + Formwork Block) - Total cost: %.2f\n", wallCost);
-            System.out.printf("Materials needed: %.2f tons of stone, %d pieces of formwork blocks\n", wall.calculateCombVolume() * 2.6, blocks.calculateFormBlockCount());
+            System.out.printf("Materials needed: %.2f tons of stone, %d pieces of formwork blocks\n", wall.calculateCombVolume() * Wall.STONE_DENSITY, blocks.calculateFormBlockCount());
         } else {
             wallCost = wall.calculateStoneCost();
             System.out.printf("Wall (Stone only) - Total cost: %.2f\n", wallCost);
-            System.out.printf("Materials needed: %.2f tons of stone\n", wall.calculateStoneVolume() * 2.6);
+            System.out.printf("Materials needed: %.2f tons of stone\n", wall.calculateStoneVolume() * Wall.STONE_DENSITY);
         }
         // Total cost of the project
         double totalProjectCost = foundationTotalCost + wallCost;
