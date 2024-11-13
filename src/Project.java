@@ -41,7 +41,11 @@ public class Project {
         double concreteCost = foundation.calculateConcreteCost();
         double rebarCost = foundation.calculateRebarCost();
         double foundationTotalCost = foundation.calculateTotalFoundationPrice();
+        double amountOfConcrete = foundation.calculateConcreteVolume();
+        int steelBarPieces = foundation.calculateRebarCount();
         System.out.printf("Foundation - Concrete cost: %.2f, Rebar cost: %.2f, Total foundation cost: %.2f\n", concreteCost, rebarCost, foundationTotalCost);
+        System.out.printf("Materials needed: %.2f m3 of concrete, %d m of steel bars.\n", amountOfConcrete, steelBarPieces);
+        System.out.println();
 
         // Wall cost calculation
         double wallCost;

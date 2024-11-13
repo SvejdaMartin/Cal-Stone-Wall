@@ -5,7 +5,7 @@ public class Wall {
     private double width, length, height;
     private boolean useFormWorkBlocks;
     private double stonePricePerTon;
-    public static final double STONE_DENSITY = 2.6; // Density of the stone for calculation (m3,tons)
+    public static final double STONE_DENSITY = 2.6; // Density of the stone for calculations (m3,tons)
 
     public Wall(double width, double length, double height, boolean useFormWorkBlocks, double stonePricePerTon){
         this.width = width;
