@@ -10,7 +10,9 @@ public class Project {
 
     public Project(Scanner scanner) {
         // Inputs for a foundation
+        System.out.println();
         System.out.println("-------------- Foundation Calculator --------------");
+        System.out.println();
         double foundationWidth = InputValidator.getPositiveDouble(scanner, "Enter foundation width (m): ");
         double foundationLength = InputValidator.getPositiveDouble(scanner, "Enter foundation length (m): ");
         double foundationDepth = InputValidator.getPositiveDouble(scanner, "Enter foundation depth (m): ");
@@ -19,7 +21,9 @@ public class Project {
         this.foundation = new Foundation(foundationWidth, foundationLength, foundationDepth, concretePrice, rebarPrice);
 
         // Inputs for a wall
+        System.out.println();
         System.out.println("-------------- Stone Wall Calculator --------------");
+        System.out.println();
         double wallWidth = InputValidator.getPositiveDouble(scanner, "Enter wall width (m): ");
         double wallLength = InputValidator.getPositiveDouble(scanner, "Enter wall length (m): ");
         double wallHeight = InputValidator.getPositiveDouble(scanner, "Enter wall height (m): ");
