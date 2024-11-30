@@ -9,6 +9,7 @@ public class Project {
     private FormWorkBlocks blocks;
 
     public Project(Scanner scanner) {
+
         // Inputs for a foundation
         System.out.println();
         System.out.println("-------------- Foundation Calculator --------------");
