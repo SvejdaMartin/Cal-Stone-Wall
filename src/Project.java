@@ -38,7 +38,6 @@ public class Project {
             this.blocks = new FormWorkBlocks(wallLength, wallHeight, blockPrice);
         }
     }
-
     public void calculateTotalProjectCost() {
         System.out.println("\n--- Total Project Cost ---\n");
 
